@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Kiah:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Kiah</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="kiah-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Kiah:war exploded" />
+    </root>
+  </artifact>
+</component>
