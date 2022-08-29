@@ -1,4 +1,4 @@
-package kiah.services.kiah;
+package org.kiah.services;
 
 import Entity.Animal;
 import com.google.gson.Gson;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Path("/animals_db")
 public class AnimalFromDB {
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 
     @Path("animals")
     @GET

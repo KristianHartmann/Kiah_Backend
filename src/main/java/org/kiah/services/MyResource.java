@@ -1,4 +1,4 @@
-package kiah.services.kiah;
+package org.kiah.services;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

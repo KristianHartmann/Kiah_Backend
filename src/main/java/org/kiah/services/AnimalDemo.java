@@ -1,4 +1,4 @@
-package kiah.services.kiah;
+package org.kiah.services;
 
 import Entity.AnimalNoDB;
 import com.google.gson.Gson;
