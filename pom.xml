@@ -126,7 +126,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <url>https://www.kiah.dk:8081/manager/text</url>
+                    <url>https://www.kiah.dk/manager/text</url>
                 </configuration>
             </plugin>
 
