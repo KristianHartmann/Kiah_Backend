@@ -111,8 +111,8 @@
                 <configuration>
                     <server>kiah</server>
                     <url>https://www.kiah.dk/manager/text</url>
-                    <username>adminKristian</username>
-                    <password>Billebert55</password>
+                    <username> ${remote.user}</username>
+                    <password> ${remote.password}</password>
                 </configuration>
             </plugin>
 
