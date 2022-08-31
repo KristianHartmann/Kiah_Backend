@@ -9,11 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <name>Kiah</name>
     <packaging>war</packaging>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <remote.server>kiah.dk/manager/text</remote.server>
         <junit.version>5.8.1</junit.version>
     </properties>
 
