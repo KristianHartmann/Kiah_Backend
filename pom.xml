@@ -110,7 +110,7 @@
                 <version>2.2</version>
                 <configuration>
                     <server>kiah</server>
-                    <url>https://www.kiah.dk/manager/text</url>
+                    <url>http://www.kiah.dk/manager/text</url>
                     <username> ${remote.user}</username>
                     <password> ${remote.password}</password>
                 </configuration>
