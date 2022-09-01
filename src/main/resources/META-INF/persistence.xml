@@ -6,9 +6,15 @@
     <persistence-unit name="pu">
         <class>Entity.Point</class>
         <class>Entity.Animal</class>
+        <class>Entity.Semester</class>
+        <class>Entity.Teacher</class>
+        <class>Entity.Student</class>
+
+
+
         <properties>
 
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/point"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/school"/>
             <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="adminKristian"/>
             <property name="javax.persistence.jdbc.password" value="Billebert55!"/>
