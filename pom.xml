@@ -113,6 +113,7 @@
                     <url>https://www.kiah.dk/manager/text</url>
                     <username> ${remote.user}</username>
                     <password> ${remote.password}</password>
+                    <update>true</update>
                 </configuration>
             </plugin>
 
