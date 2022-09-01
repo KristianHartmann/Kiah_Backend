@@ -117,8 +117,11 @@
                 <configuration>
                     <server>kiah</server>
                     <url>https://www.kiah.dk/manager/text</url>
+                    <!--suppress UnresolvedMavenProperty -->
                     <username> ${remote.user}</username>
+                    <!--suppress UnresolvedMavenProperty -->
                     <password> ${remote.password}</password>
+                    <update>true</update>
                 </configuration>
             </plugin>
 
