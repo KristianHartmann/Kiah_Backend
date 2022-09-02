@@ -53,7 +53,7 @@ public class main {
 
         // Create new student
 
-        System.out.println("****** Test at vi kan oprette en ny Student:");
+        System.out.println("***** Test at vi kan oprette en ny Student i databasen:");
         Student newStudent = teachingFacade.createStudent("Jens","Jensen");
         System.out.println(newStudent);
 
