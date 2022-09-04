@@ -1,6 +1,6 @@
 package org.kiah.services;
 
-import Entity.AnimalNoDB;
+import Entity.AnimalDB.AnimalNoDB;
 import com.google.gson.Gson;
 
 import javax.ws.rs.GET;

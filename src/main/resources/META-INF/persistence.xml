@@ -4,22 +4,25 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="pu">
-        <class>Entity.Point</class>
-        <class>Entity.Animal</class>
-        <class>Entity.Semester</class>
-        <class>Entity.Teacher</class>
-        <class>Entity.Student</class>
+        <class>Entity.PointDB.Point</class>
+        <class>Entity.AnimalDB.Animal</class>
+        <class>Entity.SchoolDB.Semester</class>
+        <class>Entity.SchoolDB.Teacher</class>
+        <class>Entity.SchoolDB.Student</class>
+        <class>Entity.OrderSystemDB.Order</class>
+        <class>Entity.OrderSystemDB.Product</class>
+        <class>Entity.OrderSystemDB.Customer</class>
+        <class>Entity.OrderSystemDB.OrderLine</class>
 
 
 
         <properties>
-
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/school"/>
-            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/OrderSystem"/>
             <property name="javax.persistence.jdbc.user" value="adminKristian"/>
             <property name="javax.persistence.jdbc.password" value="Billebert55!"/>
-            <property name="eclipselink.ddl-generation" value="create-tables" />
-            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -1,4 +1,4 @@
-package Entity;
+package Entity.AnimalDB;
 
 
 import lombok.Getter;

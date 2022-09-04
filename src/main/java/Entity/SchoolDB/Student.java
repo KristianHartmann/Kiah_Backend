@@ -1,4 +1,4 @@
-package Entity;
+package Entity.SchoolDB;
 
 import lombok.Getter;
 import lombok.Setter;

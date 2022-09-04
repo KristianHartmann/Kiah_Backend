@@ -1,6 +1,6 @@
 package org.kiah.services;
 
-import Entity.Animal;
+import Entity.AnimalDB.Animal;
 import com.google.gson.Gson;
 
 import javax.persistence.EntityManager;

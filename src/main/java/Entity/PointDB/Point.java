@@ -1,4 +1,4 @@
-package Entity;
+package Entity.PointDB;
 
 import lombok.Getter;
 import lombok.Setter;

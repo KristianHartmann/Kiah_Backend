@@ -1,26 +1,26 @@
 package Controller;
 
 
-import Entity.Semester;
-import Entity.Student;
-import Entity.Teacher;
+import Entity.SchoolDB.Semester;
+import Entity.SchoolDB.Student;
+import Entity.SchoolDB.Teacher;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class TeachingFacade {
-    private static TeachingFacade instance;
+public class StudentController {
+    private static StudentController instance;
     private static EntityManagerFactory emf;
 
-    private TeachingFacade() {
+    private StudentController() {
     }
 
-    public static TeachingFacade getInstance(EntityManagerFactory _emf) {
+    public static StudentController getInstance(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
-            instance = new TeachingFacade();
+            instance = new StudentController();
         }
         return instance;
     }

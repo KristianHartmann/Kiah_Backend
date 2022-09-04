@@ -1,15 +1,19 @@
-import Controller.TeachingFacade;
+import Controller.OrderSystemController;
+import Entity.OrderSystemDB.Customer;
+import Entity.OrderSystemDB.Order;
+import Entity.OrderSystemDB.OrderLine;
+import Entity.OrderSystemDB.Product;
+import org.glassfish.jersey.internal.inject.Custom;
 
-import Entity.Semester;
-import Entity.Student;
-import Entity.Teacher;
-
-
-import javax.persistence.*;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 public class main {
     public static void main(String[] args) {
+//        Point.DB
 //        // Open a database connection
 //        // (create a new database if it doesn't exist yet):
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
@@ -37,25 +41,91 @@ public class main {
 //        for (Point p : results) {
 //            System.out.println(p);
 //        }
-//
-//        // Close the database connection:
+
+        // Close the database connection:
 //        em.close();
 //        emf.close();
+
+//        Student.DB
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+//        TeachingFacade teachingFacade = TeachingFacade.getInstance(emf);
+//
+//        List<Student> studentList = teachingFacade.getStudents();
+//
+//        for (Student student : studentList)
+//        {
+//            System.out.println(student.toString());
+//        }
+//
+//        // Create new student
+//
+//        System.out.println("***** Test at vi kan oprette en ny Student i databasen:");
+//        Student newStudent = teachingFacade.createStudent("Jens","Jensen");
+//        System.out.println(newStudent);
+//
+//        emf.close();
+
+
+
+        //OrderSystem.DB
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-        TeachingFacade teachingFacade = TeachingFacade.getInstance(emf);
+        OrderSystemController orderSystemController = OrderSystemController.getInstance(emf);
 
-        List<Student> studentList = teachingFacade.getStudents();
+//        Get all customers in DB
+//        List<Customer> CustomerList = orderSystemController.GetCustomers();
+//        for (Customer customer : CustomerList)
+//        {
+//            System.out.println(customer.toString());
+//        }
 
-        for (Student student : studentList)
-        {
-            System.out.println(student.toString());
-        }
+//   Get all customers in DB
+//        Customer customer = orderSystemController.GetCustomerById(1);
+//        List<Order> OrderList = orderSystemController.GetOrdersByCustomer(customer);
 
-        // Create new student
 
-        System.out.println("***** Test at vi kan oprette en ny Student i databasen:");
-        Student newStudent = teachingFacade.createStudent("Jens","Jensen");
-        System.out.println(newStudent);
+
+//        Get all orders
+//        for (Order order : OrderList)
+//        {
+//            System.out.println(order.getId());
+//        }
+
+//         Create new entity in db
+//        System.out.println("***** Test at vi kan oprette en ny Entity i databasen:");
+//        Customer customer = new Customer("Hess", "Hess@TEST.com");
+
+//        Product product = new Product("Keyboard", "Steelseries", 100);
+//        orderSystemController.createEntity(product);
+
+
+
+//        Get Customer By ID
+//          Customer customer = orderSystemController.GetCustomerById(2);
+//          System.out.println(customer.toString());
+//          emf.();
+
+//          Get Product By ID
+//          Product product = orderSystemController.GetProductById(1);
+//          System.out.println(product.getName());
+
+//
+//          Get price By orderid
+//          System.out.println(orderSystemController.GetPriceOnOrder(12));
+
+
+//        Create order in db
+//        System.out.println("***** Test at vi kan oprette en ny Order i databasen:");
+//        Order order = new Order(new Date(), orderSystemController.GetCustomerById(1));
+//        orderSystemController.createEntity(order);
+
+//        Create orderline in db
+//        System.out.println("***** Test at vi kan oprette en ny Order i databasen:");
+//        OrderLine orderLine = new OrderLine(1, orderSystemController.GetOrderById(12), orderSystemController.GetProductById(1));
+//        orderSystemController.createEntity(orderLine);
+//        System.out.println(orderSystemController.GetOrderLineById(1).getQuantity());
+
+
 
         emf.close();
 

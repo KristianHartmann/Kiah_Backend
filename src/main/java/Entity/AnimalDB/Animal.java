@@ -1,4 +1,4 @@
-package Entity;
+package Entity.AnimalDB;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
