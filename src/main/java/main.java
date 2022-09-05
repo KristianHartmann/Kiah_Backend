@@ -1,14 +1,7 @@
 import Controller.OrderSystemController;
 import Entity.OrderSystemDB.Customer;
-import Entity.OrderSystemDB.Order;
-import Entity.OrderSystemDB.OrderLine;
-import Entity.OrderSystemDB.Product;
-import org.glassfish.jersey.internal.inject.Custom;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
-import java.time.Instant;
 import java.util.List;
 
 public class main {
@@ -73,11 +66,11 @@ public class main {
         OrderSystemController orderSystemController = OrderSystemController.getInstance(emf);
 
 //        Get all customers in DB
-//        List<Customer> CustomerList = orderSystemController.GetCustomers();
-//        for (Customer customer : CustomerList)
-//        {
-//            System.out.println(customer.toString());
-//        }
+        List<Customer> CustomerList = orderSystemController.GetCustomers();
+        for (Customer customer : CustomerList)
+        {
+            System.out.println(customer.toString());
+        }
 
 //   Get all customers in DB
 //        Customer customer = orderSystemController.GetCustomerById(1);

@@ -19,7 +19,7 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/OrderSystem"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/OrderSystem"/>
             <property name="javax.persistence.jdbc.user" value="adminKristian"/>
             <property name="javax.persistence.jdbc.password" value="Billebert55!"/>
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
