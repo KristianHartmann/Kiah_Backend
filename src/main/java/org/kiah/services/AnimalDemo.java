@@ -27,6 +27,12 @@ public class AnimalDemo {
     public String getList() {
         return "[\"Dog\", \"Cat\", \"Mouse\", \"Bird\"]";
     }
+    @GET
+    @Path("/hess")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getHess() {
+        return "mouse";
+    }
 
     @GET
     @Path("/animal")
