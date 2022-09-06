@@ -1,4 +1,4 @@
-import Controller.OrderSystemController;
+import DBClient.OrderSystemClient;
 import Entity.OrderSystemDB.Customer;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -63,7 +63,7 @@ public class main {
         //OrderSystem.DB
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-        OrderSystemController orderSystemController = OrderSystemController.getInstance(emf);
+        OrderSystemClient orderSystemController = OrderSystemClient.getInstance(emf);
 
 //        Get all customers in DB
         List<Customer> CustomerList = orderSystemController.GetCustomers();

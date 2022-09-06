@@ -1,4 +1,4 @@
-package Controller;
+package DBClient;
 
 import Entity.OrderSystemDB.Customer;
 import Entity.OrderSystemDB.Order;
@@ -10,16 +10,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class OrderSystemController {
+public class OrderSystemClient {
 
 
-    private static OrderSystemController instance;
+    private static OrderSystemClient instance;
     private static EntityManagerFactory emf;
 
-    public static OrderSystemController getInstance(EntityManagerFactory _emf) {
+    public static OrderSystemClient getInstance(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
-            instance = new OrderSystemController();
+            instance = new OrderSystemClient();
         }
         return instance;
     }

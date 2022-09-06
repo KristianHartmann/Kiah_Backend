@@ -1,4 +1,4 @@
-package Controller;
+package DBClient;
 
 
 import Entity.SchoolDB.Semester;
@@ -10,17 +10,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class StudentController {
-    private static StudentController instance;
+public class StudentClient {
+    private static StudentClient instance;
     private static EntityManagerFactory emf;
 
-    private StudentController() {
+    private StudentClient() {
     }
 
-    public static StudentController getInstance(EntityManagerFactory _emf) {
+    public static StudentClient getInstance(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
-            instance = new StudentController();
+            instance = new StudentClient();
         }
         return instance;
     }
