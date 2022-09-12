@@ -137,7 +137,7 @@
                 <configuration>
                     <server>kiah</server>
                     <url>${remote.server}</url>
-                    <path>/{project.artifactId}</path>
+                    <path>/kiah/</path>
                     <username> ${remote.user}</username>
                     <password> ${remote.password}</password>
                     <update>true</update>

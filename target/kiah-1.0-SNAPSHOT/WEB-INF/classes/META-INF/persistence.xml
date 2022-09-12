@@ -4,25 +4,48 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="pu">
-        <class>Entity.PointDB.Point</class>
-        <class>Entity.AnimalDB.Animal</class>
-        <class>Entity.SchoolDB.Semester</class>
-        <class>Entity.SchoolDB.Teacher</class>
-        <class>Entity.SchoolDB.Student</class>
-        <class>Entity.OrderSystemDB.Order</class>
-        <class>Entity.OrderSystemDB.Product</class>
-        <class>Entity.OrderSystemDB.Customer</class>
-        <class>Entity.OrderSystemDB.OrderLine</class>
+        <class>Entity.Dat3.Person</class>
+<!--        <class>Entity.Dat3.Order</class>-->
+<!--        <class>Entity.Dat3.Product</class>-->
+<!--        <class>Entity.Dat3.Customer</class>-->
+<!--        <class>Entity.Dat3.OrderLine</class>-->
 
 
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/OrderSystem"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/Dat3"/>
             <property name="javax.persistence.jdbc.user" value="adminKristian"/>
             <property name="javax.persistence.jdbc.password" value="Billebert55!"/>
-            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
         </properties>
     </persistence-unit>
+
+
+    <persistence-unit name="puTest" transaction-type="RESOURCE_LOCAL">
+        <!-- DO NOT RENAME THE PERSISTENCE UNIT -->
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>Entity.Dat3.Person</class>
+        <!--        <class>Entity.Dat3.Order</class>-->
+        <!--        <class>Entity.Dat3.Product</class>-->
+        <!--        <class>Entity.Dat3.Customer</class>-->
+        <!--        <class>Entity.Dat3.OrderLine</class>-->
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Dat3?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.user" value="dev"/>
+            <property name="javax.persistence.jdbc.password" value="ax2"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+            <!-- You can raise the logging level to one of the following values CONFIG, FINE, FINER, FINEST, ALL for better,
+                but also more verbose, log-info -->
+            <property name="eclipselink.logging.level" value="INFO"/>
+            <property name="eclipselink.logging.level.sql" value="INFO"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
