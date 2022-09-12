@@ -1,6 +1,6 @@
 package DTO;
 
-import Entity.OrderSystemDB.Customer;
+import Entity.Dat3.Customer;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,9 +1,9 @@
 package DBClient;
 
-import Entity.OrderSystemDB.Customer;
-import Entity.OrderSystemDB.Order;
-import Entity.OrderSystemDB.OrderLine;
-import Entity.OrderSystemDB.Product;
+import Entity.Dat3.Customer;
+import Entity.Dat3.Order;
+import Entity.Dat3.OrderLine;
+import Entity.Dat3.Product;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

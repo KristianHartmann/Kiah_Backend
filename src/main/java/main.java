@@ -1,5 +1,5 @@
 import DBClient.OrderSystemClient;
-import Entity.OrderSystemDB.Customer;
+import Entity.Dat3.Customer;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;

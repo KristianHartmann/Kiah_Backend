@@ -1,19 +1,17 @@
-package Controller;
+package DBClient;
 
-import DBClient.OrderSystemClient;
 import DTO.CustomerDTO;
-import Entity.OrderSystemDB.Customer;
+import Entity.Dat3.Customer;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class CustomerController {
+public class CustomerClient {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
     OrderSystemClient orderSystemController = OrderSystemClient.getInstance(emf);
 
-    public CustomerController(){
+    public CustomerClient(){
     }
     CustomerDTO customerDTO = new CustomerDTO();
 

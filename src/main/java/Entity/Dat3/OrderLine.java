@@ -1,4 +1,4 @@
-package Entity.OrderSystemDB;
+package Entity.Dat3;
 
 import javax.persistence.*;
 

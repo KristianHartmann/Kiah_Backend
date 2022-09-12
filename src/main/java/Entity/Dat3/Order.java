@@ -1,8 +1,7 @@
-package Entity.OrderSystemDB;
+package Entity.Dat3;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
