@@ -32,7 +32,7 @@ public class PersonResource {
     @Path("/all")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getAllPersons() {
-        return Response.ok().entity(GSON.toJson(FACADE.getAll())).build();
+        return Response.ok().entity(GSON.toJson(FACADE.getAllPersons())).build();
     }
 
     @POST
@@ -40,7 +40,7 @@ public class PersonResource {
     @Consumes({MediaType.APPLICATION_JSON})
     public Response createPerson(String input){
         PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
-        PersonDTO returned = FACADE.create(personDTO);
+        PersonDTO returned = FACADE.addPerson(personDTO);
         return Response.ok().entity(GSON.toJson(returned)).build();
     }
 
@@ -51,7 +51,7 @@ public class PersonResource {
     @Consumes({MediaType.APPLICATION_JSON})
     public Response updatePerson(String input) {
         PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
-        PersonDTO returned = FACADE.update(personDTO);
+        PersonDTO returned = FACADE.editPerson(personDTO);
         return Response.ok().entity(GSON.toJson(returned)).build();
     }
     
@@ -59,10 +59,10 @@ public class PersonResource {
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response updatePersonPath(@PathParam("id") String input, long id) {
+    public Response updatePersonPath(@PathParam("id") String input, Integer id) {
         PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
         personDTO.setId(id);
-        PersonDTO returned = FACADE.update(personDTO);
+        PersonDTO returned = FACADE.editPerson(personDTO);
         return Response.ok().entity(GSON.toJson(returned)).build();
     }
 

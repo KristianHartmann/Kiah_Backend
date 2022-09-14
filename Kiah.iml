@@ -22,6 +22,7 @@
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
           <factory-entry name="pu" value="8ccb7ff2-105d-4927-83f6-56ac134a2855" />
+          <factory-entry name="puTest" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />

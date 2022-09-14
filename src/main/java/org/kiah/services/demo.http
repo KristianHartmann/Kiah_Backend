@@ -1,11 +1,15 @@
-GET http://localhost:8080/Kiah/webapi/employee/all
+GET http://localhost:8080/Kiah/webapi/person/all
 
 ###
 POST http://localhost:8080/Kiah/webapi/person/
 Content-Type: application/json
 #User-Agent: Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion
 
-{"name": "frederik", "age": 10}
+{
+  "fname": "frederik",
+  "lname": "hess",
+  "phone": "13371377"
+}
 
 ###
 PUT http://localhost:8080/Kiah/webapi/person/

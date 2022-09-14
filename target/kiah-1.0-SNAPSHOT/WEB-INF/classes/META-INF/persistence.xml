@@ -4,8 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="pu">
-        <class>Entity.Dat3.Person</class>
-        <class>Entity.Dat3.Employee</class>
+        <class>Entity.Person</class>
 <!--        <class>Entity.Dat3.Order</class>-->
 <!--        <class>Entity.Dat3.Product</class>-->
 <!--        <class>Entity.Dat3.Customer</class>-->
@@ -16,7 +15,7 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/Dat3"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://164.92.238.98:3306/Rest_Person"/>
             <property name="javax.persistence.jdbc.user" value="adminKristian"/>
             <property name="javax.persistence.jdbc.password" value="Billebert55!"/>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
@@ -27,7 +26,7 @@
     <persistence-unit name="puTest" transaction-type="RESOURCE_LOCAL">
         <!-- DO NOT RENAME THE PERSISTENCE UNIT -->
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>Entity.Dat3.Person</class>
+        <class>Entity.Person</class>
         <!--        <class>Entity.Dat3.Order</class>-->
         <!--        <class>Entity.Dat3.Product</class>-->
         <!--        <class>Entity.Dat3.Customer</class>-->

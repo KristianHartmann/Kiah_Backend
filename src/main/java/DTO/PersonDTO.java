@@ -5,9 +5,11 @@
  */
 package DTO;
 
-import Entity.Dat3.Person;
+import Entity.Person;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,14 +17,13 @@ import java.util.List;
  * @author tha
  */
 public class PersonDTO {
-    private long id;
-    private String name;
-    private int age;
+    private Integer id;
+    private String fname;
+    private String lname;
+    private String phone;
+    private String created;
+    private String lastedited;
 
-    public PersonDTO(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
     public static List<PersonDTO> getDtos(List<Person> persons) {
         List<PersonDTO> persondtos = new ArrayList();
@@ -34,40 +35,67 @@ public class PersonDTO {
     public PersonDTO(Person person) {
         if (person.getId() != null)
             this.id = person.getId();
-        this.name = person.getName();
-        this.age = person.getAge();
+        this.fname = person.getFname();
+        this.lname = person.getLname();
+        this.phone = person.getPhone();
+        this.created = person.getCreated();
+        this.lastedited = person.getLastedited();
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFname() {
+        return fname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public int getAge() {
-        return age;
+    public String getLname() {
+        return lname;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
+    }
+
+    public String getLastedited() {
+        return lastedited;
+    }
+
+    public void setLastedited(String lastedited) {
+        this.lastedited = lastedited;
     }
 
     @Override
     public String toString() {
         return "PersonDTO{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
+                ", fname='" + fname + '\'' +
+                ", lname=" + lname +
                 '}';
     }
 }

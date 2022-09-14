@@ -1,19 +1,22 @@
 package DBClient;
 
 import DTO.PersonDTO;
-import Entity.Dat3.Person;
+import Entity.Person;
+import Interfaces.IPersonController;
 import utils.EMF_Creator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * Rename Class to a relevant name Add add relevant facade methods
  */
-public class PersonController {
+public class PersonController implements IPersonController {
+    Date date = new Date();
 
     private static PersonController instance;
     private static EntityManagerFactory emf;
@@ -39,8 +42,30 @@ public class PersonController {
         return emf.createEntityManager();
     }
 
-    public PersonDTO create(PersonDTO personDTO){
-        Person personEntity = new Person(personDTO.getName(), personDTO.getAge());
+
+
+
+
+
+
+    
+    //TODO Remove/Change this before use
+
+    
+
+
+    public static void main(String[] args) {
+        emf = EMF_Creator.createEntityManagerFactory();
+//        emf = EMF_Creator.createEntityManagerFactoryForTest();
+        PersonController fe = getPersonFacade(emf);
+        fe.getAllPersons().forEach(dto->System.out.println(dto));
+    }
+
+    @Override
+    public PersonDTO addPerson(PersonDTO personDTO) {
+        Person personEntity = new Person(personDTO.getFname(), personDTO.getLname() ,personDTO.getPhone());
+        personEntity.setLastedited(date.toString());
+        personEntity.setCreated(date.toString());
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
@@ -52,14 +77,48 @@ public class PersonController {
         return new PersonDTO(personEntity);
     }
 
-    public PersonDTO update(PersonDTO personDTO)   {
+    @Override
+    public boolean deletePerson(Integer id) {
+        EntityManager em = getEntityManager();
+        Person person = em.find(Person.class, id);
+        try {
+            em.getTransaction().begin();
+            em.remove(person);
+            em.getTransaction().commit();
+        }catch(Exception e){
+            return false;
+        } finally {
+            em.close();
+            return true;
+        }
+    }
+
+    @Override
+    public PersonDTO getPerson(Integer id) {
+            EntityManager em = emf.createEntityManager();
+            Person person = em.find(Person.class, id);
+            if (person == null)
+                return null;
+            return new PersonDTO(person);
+        }
+
+
+    @Override
+    public List<PersonDTO> getAllPersons() {
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Person> query = em.createQuery("SELECT p FROM Person p", Person.class);
+        List<Person> persons = query.getResultList();
+        return PersonDTO.getDtos(persons);    }
+
+    @Override
+    public PersonDTO editPerson(PersonDTO personDTO) {
         EntityManager em = getEntityManager();
         Person person = em.find(Person.class, personDTO.getId());
         if(person == null)
     return null;
 
-        Person personEntity = new Person(personDTO.getId(), personDTO.getName(), personDTO.getAge());
-
+        Person personEntity = new Person(personDTO.getId(), personDTO.getFname(), personDTO.getLname(), personDTO.getPhone(), personDTO.getCreated(), personDTO.getLastedited());
+        personEntity.setLastedited(date.toString());
         try {
             em.getTransaction().begin();
             em.merge(personEntity);
@@ -69,31 +128,4 @@ public class PersonController {
         }
         return new PersonDTO(personEntity);
     }
-
-
-    public static PersonDTO getById(long id)  {
-        EntityManager em = emf.createEntityManager();
-        Person person = em.find(Person.class, id);
-        if (person == null)
-            return null;
-        return new PersonDTO(person);
-    }
-    
-    //TODO Remove/Change this before use
-
-    
-    public List<PersonDTO> getAll(){
-        EntityManager em = emf.createEntityManager();
-        TypedQuery<Person> query = em.createQuery("SELECT p FROM Person p", Person.class);
-        List<Person> persons = query.getResultList();
-        return PersonDTO.getDtos(persons);
-    }
-    
-    public static void main(String[] args) {
-        emf = EMF_Creator.createEntityManagerFactory();
-//        emf = EMF_Creator.createEntityManagerFactoryForTest();
-        PersonController fe = getPersonFacade(emf);
-        fe.getAll().forEach(dto->System.out.println(dto));
-    }
-
 }
