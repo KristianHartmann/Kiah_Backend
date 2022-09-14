@@ -1,14 +1,14 @@
 package org.kiah.services;
 
 import DBClient.PersonController;
+import DTO.PersonDTO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import lombok.SneakyThrows;
 import utils.EMF_Creator;
 
 import javax.persistence.EntityManagerFactory;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -35,12 +35,36 @@ public class PersonResource {
         return Response.ok().entity(GSON.toJson(FACADE.getAll())).build();
     }
 
-//    @POST
-//    @Produces({MediaType.APPLICATION_JSON})
-//    @Consumes({MediaType.APPLICATION_JSON})
-//    public Response postExample(String input){
-////        RenameMeDTO rmdto = GSON.fromJson(input, RenameMeDTO.class);
-////        System.out.println(rmdto);
-//        return Response.ok().entity().build();
-//    }
+    @POST
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response createPerson(String input){
+        PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
+        PersonDTO returned = FACADE.create(personDTO);
+        return Response.ok().entity(GSON.toJson(returned)).build();
+    }
+
+
+    @SneakyThrows
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response updatePerson(String input) {
+        PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
+        PersonDTO returned = FACADE.update(personDTO);
+        return Response.ok().entity(GSON.toJson(returned)).build();
+    }
+    
+    @Path("/{id}")
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response updatePersonPath(@PathParam("id") String input, long id) {
+        PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
+        personDTO.setId(id);
+        PersonDTO returned = FACADE.update(personDTO);
+        return Response.ok().entity(GSON.toJson(returned)).build();
+    }
+
+
 }

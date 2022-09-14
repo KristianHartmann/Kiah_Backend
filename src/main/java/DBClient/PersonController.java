@@ -52,11 +52,30 @@ public class PersonController {
         return new PersonDTO(personEntity);
     }
 
-    public PersonDTO getById(long id) { //throws PersonNotFoundException {
+    public PersonDTO update(PersonDTO personDTO)   {
+        EntityManager em = getEntityManager();
+        Person person = em.find(Person.class, personDTO.getId());
+        if(person == null)
+    return null;
+
+        Person personEntity = new Person(personDTO.getId(), personDTO.getName(), personDTO.getAge());
+
+        try {
+            em.getTransaction().begin();
+            em.merge(personEntity);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return new PersonDTO(personEntity);
+    }
+
+
+    public static PersonDTO getById(long id)  {
         EntityManager em = emf.createEntityManager();
         Person person = em.find(Person.class, id);
-//        if (person == null)
-//            throw new PersonNotFoundException("The Person entity with ID: "+id+" Was not found");
+        if (person == null)
+            return null;
         return new PersonDTO(person);
     }
     

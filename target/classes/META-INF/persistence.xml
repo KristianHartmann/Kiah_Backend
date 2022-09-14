@@ -5,6 +5,7 @@
              version="2.2">
     <persistence-unit name="pu">
         <class>Entity.Dat3.Person</class>
+        <class>Entity.Dat3.Employee</class>
 <!--        <class>Entity.Dat3.Order</class>-->
 <!--        <class>Entity.Dat3.Product</class>-->
 <!--        <class>Entity.Dat3.Customer</class>-->

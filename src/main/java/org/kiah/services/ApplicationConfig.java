@@ -3,7 +3,7 @@ package org.kiah.services;
 import javax.ws.rs.core.Application;
 import java.util.Set;
 
-@javax.ws.rs.ApplicationPath("api")
+@javax.ws.rs.ApplicationPath("webapi")
 public class ApplicationConfig extends Application {
 
     @Override

@@ -1,8 +1,20 @@
-GET http://localhost:8080/devops_starter_war_exploded/api/xxx
+GET http://localhost:8080/Kiah/webapi/employee/all
 
 ###
-POST http://localhost:8080/devops_starter_war_exploded/api/xxx
+POST http://localhost:8080/Kiah/webapi/person/
 Content-Type: application/json
 #User-Agent: Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion
 
-{"str1": "First Property", "str2": "Second Property"}
+{"name": "frederik", "age": 10}
+
+###
+PUT http://localhost:8080/Kiah/webapi/person/
+Content-Type: application/json
+
+{"id": "2","name": "daniell", "age": 1}
+
+###
+PUT http://localhost:8080/Kiah/webapi/person/2
+Content-Type: application/json
+
+{"name": "daniel", "age": 12}
