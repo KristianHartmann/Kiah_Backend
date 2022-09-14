@@ -4,6 +4,7 @@
     <p><a href="webapi/myresource">Jersey resource</a>
     <p>Test deploy</p>
     <p>Test deploy2</p>
+    <p>Test deploy3</p>
 
 
 </body>
