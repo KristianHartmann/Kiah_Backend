@@ -15,9 +15,24 @@ public class CustomerClient {
     }
     CustomerDTO customerDTO = new CustomerDTO();
 
-    public List<Customer> getAllCustomers(){
-        customerDTO.setCustomerList(orderSystemController.GetCustomers());
-          return customerDTO.getCustomerList();
+    //public List<Customer> getAllCustomers(){
+      //  customerDTO.setCustomerList(orderSystemController.GetCustomers());
+        //  return customerDTO.getCustomerList();
+    //}
+
+    public OrderSystemClient getOrderSystemController() {
+        return orderSystemController;
     }
 
+    public void setOrderSystemController(OrderSystemClient orderSystemController) {
+        this.orderSystemController = orderSystemController;
+    }
+
+    public CustomerDTO getCustomerDTO() {
+        return customerDTO;
+    }
+
+    public void setCustomerDTO(CustomerDTO customerDTO) {
+        this.customerDTO = customerDTO;
+    }
 }
