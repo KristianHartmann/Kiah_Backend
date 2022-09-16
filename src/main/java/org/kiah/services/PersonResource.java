@@ -44,8 +44,6 @@ public class PersonResource {
         return Response.ok().entity(GSON.toJson(returned)).build();
     }
 
-
-    @SneakyThrows
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
