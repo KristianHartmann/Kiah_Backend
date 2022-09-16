@@ -1,12 +1,10 @@
 package DTO;
 
 import Entity.Dat3.Customer;
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.util.List;
 
-@Getter @Setter
 public class CustomerDTO {
     private String Name;
 private String Email;
