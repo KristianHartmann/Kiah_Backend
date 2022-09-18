@@ -14,4 +14,9 @@
       <module name="Kiah" target="1.8" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Kiah" options="-endorseddirs C:\Users\mehgn\IdeaProjects\Kiah\target/endorsed" />
+    </option>
+  </component>
 </project>
