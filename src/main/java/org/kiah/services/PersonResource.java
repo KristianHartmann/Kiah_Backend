@@ -55,11 +55,11 @@ public class PersonResource {
         return Response.ok().entity(GSON.toJson(returned)).build();
     }
     
-    @Path("/{id}")
+    @Path("/update/{id}")
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response updatePersonPath(@PathParam("id") String input, Integer id) {
+    public Response updatePersonPath(@PathParam("id") Integer id, String input) {
         PersonDTO personDTO = GSON.fromJson(input, PersonDTO.class);
         personDTO.setId(id);
         PersonDTO returned = FACADE.editPerson(personDTO);
