@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Kiah" options="-endorseddirs C:\Users\mehgn\IdeaProjects\Kiah\target/endorsed" />
+      <module name="Kiah" options="-endorseddirs C:\Users\hartk\IdeaProjects\Kiah_Backend\target/endorsed" />
     </option>
   </component>
 </project>
